@@ -1,0 +1,33 @@
+<div class="form-group">
+    <div class="input-group">
+            <input
+                    class="form-control"
+                    placeholder="__/__/____"
+                    [textMask]="{mask: mask}"
+                    [(ngModel)]="valueInput"
+                    (blur)="onBlur($event.target.value)">
+            <div class="input-group-append">
+                    <button
+                            class="btn btn-default"
+                            type="button"
+                            (click)="d.toggle()">
+                            <span class="far fa-calendar-alt"></span>
+                    </button>
+            </div>
+            <input
+                    [(ngModel)]="value"
+                    ngbDatepicker
+                    [minDate]="minPickerDate"
+                    [maxDate]="maxPickerDate"
+                    #d="ngbDatepicker"
+                    [footerTemplate]="footerTemplate"
+                    [firstDayOfWeek]="7"
+                    hidden>
+    </div>
+    <input class="form-control" [(ngModel)]="value" [name]="formName" [required]="required" hidden>
+</div>
+<ng-template #footerTemplate>
+    <hr class="my-0">
+    <button class="btn btn-primary btn-sm m-2 float-left" (click)="selectToday(); d.close()">Hoje</button>
+    <button class="btn btn-secondary btn-sm m-2 float-right" (click)="value = null; d.close()">Limpar</button>
+</ng-template>

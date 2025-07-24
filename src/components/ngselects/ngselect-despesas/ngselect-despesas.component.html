@@ -1,0 +1,18 @@
+<ng-select
+  class="custom-material-style"
+  bindLabel="listadespesas"
+  bindValue="listadespesas"
+  [loading]="selectLoading"
+  [typeToSearchText]="typeToSearchText"
+  [items]="itens"
+  [loadingText]="loadingText"
+  [notFoundText]="notFoundText"
+  [clearAllText]="clearAllText"
+  [placeholder]="placeholder"
+  (change)="onChange($event)" 
+  [(ngModel)]="selectedItem"
+>
+  <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+    <div><span><strong>{{ item }}</strong></span></div>
+  </ng-template>
+</ng-select>

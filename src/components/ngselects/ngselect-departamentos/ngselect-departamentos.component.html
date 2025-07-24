@@ -1,0 +1,19 @@
+<ng-select
+  class="custom-material-style"
+  bindLabel="listadepartamentos"
+  bindValue="codigo"
+  [loading]="selectLoading"
+  [typeToSearchText]="typeToSearchText"
+  [items]="itens"
+  [loadingText]="loadingText"
+  [notFoundText]="notFoundText"
+  [clearAllText]="clearAllText"
+  [placeholder]="placeholder"
+  (change)="onChange(!!$event ? $event.codigo : $event)" 
+  [ngModel]="selectedItem"
+>
+  <ng-template ng-option-tmp let-item="item" let-search="searchTerm">
+    <div><span><strong>{{ item.listadepartamentos }}</strong></span></div>
+    <small>Código: {{ item.codigo }} </small>
+  </ng-template>
+</ng-select>

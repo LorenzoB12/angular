@@ -1,0 +1,6 @@
+<ngx-datatable [rows]="filterRows" [columns]="columns" [columnMode]="'force'" [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="page.size"
+    [reorderable]="false" [sorts]="sorts" [sortType]="'multi'" (sort)="setSort($event)" [messages]="messages"
+    [loadingIndicator]="loadindicator">
+</ngx-datatable>
+
+<datatable-compl #datatableCompl [parent]="this"></datatable-compl>

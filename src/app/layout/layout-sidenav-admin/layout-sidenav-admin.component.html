@@ -1,0 +1,19 @@
+<sidenav [orientation]="orientation" [ngClass]="getClasses()">
+
+   <!-- Brand demo (see src/demo.css) -->
+  <div class="app-brand demo bg-navbar-theme" *ngIf="orientation !== 'horizontal'">
+    <span routerLink="/" class="app-brand-logo">            
+      <img [src]="appService.getAssetsPath + 'img/farmavet-brand-logo.jpg'" width="100%" height="100%" alt="APP" *ngIf="isExpanded">
+      <img src]="appService.getAssetsPath + 'img/farmavet-brand-logo-small.jpg'" width="100%" height="100%" alt="APP" *ngIf="!isExpanded">
+    </span>    
+    <a href="javascript:void(0)" class="layout-sidenav-toggle sidenav-link text-large ml-auto" (click)="toggleSidenav()">
+      <i class="text-white fas fa-align-justify align-middle"></i>
+    </a>
+  </div>
+  <div class="sidenav-divider mt-0" *ngIf="orientation !== 'horizontal'"></div>  
+  
+  <!-- Inner -->
+  <div class="sidenav-inner" [ngClass]="{ 'py-1': orientation !== 'horizontal' }">
+        
+  </div>
+</sidenav>

@@ -1,0 +1,9 @@
+<div class="input-group">
+    <input class="form-control" [(ngModel)]="search" placeholder="Pesquisar..." (ngModelChange)="search = $event.toUpperCase()"
+    (keyup)="$event.keyCode === 13 && updateSearch()">
+    <div class="input-group-prepend pointer" (click)="updateSearch()">
+      <span class="input-group-text">
+        <i class="fas fa-search text-muted"></i>
+      </span>
+    </div>
+  </div>

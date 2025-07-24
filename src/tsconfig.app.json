@@ -1,0 +1,17 @@
+{
+  "extends": "../tsconfig.json",
+  "compilerOptions": {
+    "outDir": "../out-tsc/app",
+    "baseUrl": "./",
+    "module": "es2015",    
+    //"module": "esnext", // Dynamic import is only supported when '--module' flag is 'commonjs' or 'esNext'.
+    "types": []
+  },
+  "angularCompilerOptions": {
+    "preserveWhitespaces": true
+  },
+  "exclude": [
+    "test.ts",
+    "**/*.spec.ts"
+  ]
+}

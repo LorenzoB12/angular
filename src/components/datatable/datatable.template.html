@@ -1,0 +1,24 @@
+<ngx-datatable 
+    [selectionType]="'checkbox'"
+    [rows]="rows" 
+    [columns]="columns" 
+    [columnMode]="'force'" 
+    [headerHeight]="50" 
+    [footerHeight]="50" 
+    [rowHeight]="'auto'"
+    [externalPaging]="true"
+    [count]="page.totalElements" 
+    [offset]="page.pageNumber"
+    [limit]="page.size" 
+    (page)='setPage($event)' 
+    [reorderable]="false" 
+    [externalSorting]="true"
+    [sorts]="sorts" 
+    [sortType]="'multi'" 
+    (sort)="setSort($event)" 
+    [messages]="messages"
+    [loadingIndicator]="loadindicator"
+    (activate)="onDatatableLineClick($event)">
+</ngx-datatable>
+
+<datatable-compl #datatableCompl [parent]="this"></datatable-compl>

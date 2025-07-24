@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg align-items-lg-center container-p-x bg-navbar-theme">
+  <!-- Brand -->
+  <a routerLink="/principal" class="navbar-brand app-brand demo d-lg-none py-0 mr-4">
+    <span class="app-brand-logo">
+     <img src="assets/img/certel-brand-logo.jpg" height="80" >
+    </span>    
+  </a>
+
+  <!-- Navbar toggle -->
+  <button class="navbar-toggler" type="button" (click)="isExpanded = !isExpanded" [hidden]="appService.isMobile">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="navbar-collapse collapse" [ngbCollapse]="!isExpanded" [hidden]="appService.isMobile">
+    <!-- Divider -->
+    <hr class="d-lg-none w-100 my-2">
+
+    <div class="navbar-nav align-items-lg-center">
+     
+    </div>
+
+    <div class="navbar-nav align-items-lg-center ml-auto">
+
+      <div ngbDropdown [placement]="isRTL ? 'bottom-left' : 'bottom-right'" class="demo-navbar-notifications nav-item mr-lg-3" hidden>
+        <a ngbDropdownToggle class="nav-link hide-arrow" href="javascript:void(0)">
+          <i class="fas fa-bell navbar-icon align-middle"></i>
+          <span class="badge badge-danger badge-dot indicator"></span>
+          <span class="d-lg-none align-middle">&nbsp; Notificações</span>
+        </a>
+        <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">                 
+          <a href="/notificacoes" class="d-block text-center text-light small p-2 my-1">Ver todas notificações</a>
+        </div>
+      </div>          
+
+      <!-- Divider -->
+      <div class="nav-item d-none d-lg-block text-big font-weight-light line-height-1 opacity-25 mr-3 ml-1">|</div>
+
+      <div ngbDropdown [placement]="isRTL ? 'bottom-left' : 'bottom-right'" class="demo-navbar-user nav-item" hidden>
+        <a ngbDropdownToggle class="nav-link" href="javascript:void(0)">
+          <span class="d-inline-flex flex-lg-row-reverse align-items-center align-middle">
+            <img [src]="appService.getAssetsPath + 'img/avatars/avatar.jpg'" alt class="d-block ui-w-30 rounded-circle">
+            <span class="px-1 mr-lg-2 ml-2 ml-lg-0">N/A</span>
+          </span>
+        </a>
+        <div ngbDropdownMenu [class.dropdown-menu-right]="!isRTL">                    
+          <div class="dropdown-divider"></div>
+          <div class="dropdown-item"><i class="fas fa-power-off text-danger"></i> &nbsp; Sair</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</nav>
